@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'dva'
 import { Button } from 'antd'
-import { queryProducts, testMock } from '../services/products'
+import { queryProducts } from '../services/products'
 
 
 class Products extends React.Component {
@@ -21,9 +21,8 @@ class Products extends React.Component {
   }
 
   testApi =() => {
-    testMock().then( res =>{
-      console.log(res);
-    });
+    console.log('asd');
+    queryProducts();
   }
 
 
