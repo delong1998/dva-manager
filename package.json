@@ -1,13 +1,16 @@
 {
   "private": true,
   "scripts": {
-    "start": "roadhog server",
+    "start": "set PORT=8886&&roadhog server",
     "build": "roadhog build",
     "lint": "eslint --ext .js src test",
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "antd": "^4.8.5",
+    "babel-plugin-import": "^1.13.3",
     "dva": "^2.4.1",
+    "history": "^5.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
