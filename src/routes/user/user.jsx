@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react';
 import { connect } from 'dva'
 import { Button } from 'antd'
-import { queryProducts } from '../services/products'
-import StandardTable from '../components/StandardTable/index'
+import StandardTable from '../../components/StandardTable/index'
 import { Card, PageHeader  } from 'antd'
 import { PlusOutlined } from '@ant-design/icons';
-import styles from './Products.less'
+import styles from './user.less'
 
 
 class Products extends React.Component {

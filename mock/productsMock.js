@@ -1,8 +1,14 @@
 module.exports = {
-    "GET /papers": (req, res) => {
-        console.log(res);
+    "GET /products": (req, res) => {
         res.send({
-            name: 'asdasd',
+            data: {
+                list : [{title:'asdsad'}],
+                pagination: {
+                  totle: 1,
+                  currentPage: 1,
+                  pageSize: 10
+                }
+              }
         })
     }
 }

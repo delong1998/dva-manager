@@ -14,6 +14,14 @@ function checkStatus(response) {
   throw error;
 }
 
+const parseQuery = (obj) => {
+  let str = ''
+  for (let key in obj) {
+    const value = typeof obj[key] !== 'string' ? JSON.stringify(obj[key]) : obj[key]
+    str += '&' + key + '=' + value
+  }
+  return str.substr(1)
+}
 /**
  * Requests a URL, returning a promise.
  *
@@ -21,6 +29,20 @@ function checkStatus(response) {
  * @param  {object} [options] The options we want to pass to "fetch"
  * @return {object}           An object containing either "data" or "err"
  */
+// export default function request(url, method = 'get', data) {
+//   const options = {
+//     method: method,   // HTTP请求方法，默认为GET
+//     headers: {        // HTTP的请求头，默认为{}
+//       'Content-Type': 'application/x-www-form-urlencoded',
+//       // 'Cookie': 'JSESSIONID=3B95A1CCF1A3523EBC17A4A4267DBB51'
+//     },
+//     credentials: 'include' // 是否携带cookie，默认为omit,不携带; same-origi,同源携带; include,同源跨域都携带
+//   }
+//   if (method === 'get') {
+//     url += '?' + parseQuery(data)
+//   } else {
+//     options.body = JSON.stringify(data)
+//   }
 export default function request(url, options) {
   return fetch(url, options)
     .then(checkStatus)
