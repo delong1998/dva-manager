@@ -11,20 +11,20 @@ export default {
     },
   },
   effects: {
-    
+
     *fetch({ payload }, { call, put }) {
-        const response = yield call(login, payload);
-        yield put({
-          type: 'show',
-          payload: response,
-        });
-      }
+      const response = yield call(login, payload);
+      yield put({
+        type: 'show',
+        payload: response,
+      });
+    }
   },
   reducers: {
     show(state, { payload }) {
-        debugger;
+      debugger;
       state.data = payload.data;
-      return {...state}
+      return { ...state }
     },
   },
 };

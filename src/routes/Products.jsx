@@ -49,11 +49,20 @@ class Products extends React.Component {
     },
   ];
 
+  test = () => {
+    const { dispatch } = this.props;
+    console.log('asd');
+    dispatch({
+      type: 'products/test',
+      payload: {}
+    })
+  }
   render() {
     const { selectedRows } = this.state;
     return (
       <PageHeader>
         <Card bordered={false}>
+          <Button onClick={this.test}>测试</Button>
           <div className={styles.tableList}>
             <div className={styles.tableListOperator}>
               <Button icon={<PlusOutlined />} type="primary" onClick={() => this.handleModalVisible(true)}>

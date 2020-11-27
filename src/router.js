@@ -6,11 +6,10 @@ import Login from './routes/Login'
 import User from './routes/user/user'
 import Books from './routes/books/books'
 import { isLogined, clearToken } from './utils/auth'
+import { logout } from './services/login'
 
 import { Layout, Menu } from 'antd';
 import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
   UserOutlined,
   VideoCameraOutlined,
   UploadOutlined,
@@ -44,8 +43,9 @@ function RouterConfig({ history }) {
   }
 
   var loginOut = () => {
+    logout();
     clearToken();
-    window.location.reload()
+    window.location.reload();
   }
 
   console.log(window.location.pathname);

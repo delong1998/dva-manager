@@ -1,5 +1,5 @@
 module.exports = {
-    "GET /products": (req, res) => {
+    "GET /productsaaaa": (req, res) => {
         res.send({
             data: {
                 list : [{title:'asdsad'}],

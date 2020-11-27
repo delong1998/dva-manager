@@ -20,6 +20,7 @@ export default {
   },
   reducers: {
     appendList(state, { payload }) {
+      debugger;
       state.data = payload.data;
       return {...state}
     },

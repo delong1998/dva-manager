@@ -1,41 +1,17 @@
 import React, { Fragment } from 'react';
 import { connect } from 'dva'
-import { setToken, getToken } from '../utils/auth'
 import { Form, Input, Button, Checkbox, Card } from 'antd';
 import { clearToken } from '../utils/auth'
 import cookie from 'react-cookies'
 
 class Login extends React.Component {
 
-    login = () => {
-        setToken({
-            username: '李德龙',
-            password: '123465'
-        })
-        console.log(getToken());
-        this.props.history.push('/');
-        window.location.reload()
-
-    }
-
     onFinish = values => {
         const { dispatch } = this.props;
-        
-        setToken({
-            username: '李德龙',
-            password: '123465'
+        dispatch({
+            type: 'login/login',
+            payload: values
         })
-        console.log(getToken());
-        this.props.history.push('/');
-        window.location.reload()
-        
-        // console.log(this.props);
-        // setToken({
-        //     username: '李德龙',
-        //     password: '123465'
-        // })
-        // this.props.history.push('/');
-        // window.location.reload()
     };
 
     onFinishFailed = errorInfo => {
@@ -109,7 +85,8 @@ class Login extends React.Component {
 const mapStateToProps = state => {
     console.log(state);
     return {
-        data: state.products.data
+        // data: state.products.data
+        data: state
     }
 }
 export default connect(mapStateToProps)(Login);
