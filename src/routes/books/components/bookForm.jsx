@@ -72,14 +72,27 @@ const BooksForm = props => {
                 </Form.Item>
 
                 <Form.Item
-                    name="price"
+                    name="publisher"
                     rules={[// 声明式验证: 直接使用别人定义好的验证规则进行验证
                         { required: true, whitespace: true, message: '用户名必须输入' },
                     ]}
                     {...formLayout}
-                    label="价格"
+                    label="出版社"
                 >
                     <Input
+                        placeholder="请输入出版社"
+                    />
+                </Form.Item>
+
+                <Form.Item
+                    name="price"
+                    rules={[// 声明式验证: 直接使用别人定义好的验证规则进行验证
+                        { required: true, message: '用户名必须输入' },
+                    ]}
+                    {...formLayout}
+                    label="价格"
+                >
+                    <InputNumber
                         placeholder="请输入价格"
                     />
                 </Form.Item>
@@ -87,13 +100,78 @@ const BooksForm = props => {
                 <Form.Item
                     name="num"
                     rules={[// 声明式验证: 直接使用别人定义好的验证规则进行验证
-                        { required: true, whitespace: true, message: '用户名必须输入' },
+                        { required: true, message: '用户名必须输入' },
                     ]}
                     {...formLayout}
                     label="数量"
                 >
-                    <Input
+                    <InputNumber
                         placeholder="请输入数量"
+                    />
+                </Form.Item>
+
+                <Form.Item
+                    name="status"
+                    rules={[// 声明式验证: 直接使用别人定义好的验证规则进行验证
+                        { required: true, message: '用户名必须输入' },
+                    ]}
+                    {...formLayout}
+                    label="图书状态"
+                >
+                    <Input
+                        placeholder="请输入图书状态"
+                    />
+                </Form.Item>
+
+                <Form.Item
+                    name="publisherDate"
+                    rules={[// 声明式验证: 直接使用别人定义好的验证规则进行验证
+                        { required: true, message: '用户名必须输入' },
+                    ]}
+                    {...formLayout}
+                    label="图书日期"
+                >
+                    <Input
+                        placeholder="请输入发布日期"
+                    />
+                </Form.Item>
+
+                <Form.Item
+                    name="ISBN"
+                    rules={[// 声明式验证: 直接使用别人定义好的验证规则进行验证
+                        { required: true, message: '用户名必须输入' },
+                    ]}
+                    {...formLayout}
+                    label="ISBN号"
+                >
+                    <InputNumber
+                        placeholder="请输入ISBN号"
+                    />
+                </Form.Item>
+
+                <Form.Item
+                    name="language"
+                    rules={[// 声明式验证: 直接使用别人定义好的验证规则进行验证
+                        { required: true, message: '用户名必须输入' },
+                    ]}
+                    {...formLayout}
+                    label="语言"
+                >
+                    <Input
+                        placeholder="请输入语言"
+                    />
+                </Form.Item>
+
+                <Form.Item
+                    name="pageNum"
+                    rules={[// 声明式验证: 直接使用别人定义好的验证规则进行验证
+                        { required: true, message: '用户名必须输入' },
+                    ]}
+                    {...formLayout}
+                    label="总页数"
+                >
+                    <InputNumber
+                        placeholder="请输入总页数"
                     />
                 </Form.Item>
 

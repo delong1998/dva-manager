@@ -1,17 +1,21 @@
 import React, { Fragment } from 'react';
 import { connect } from 'dva'
 import { Form, Input, Button, Checkbox, Card } from 'antd';
-import { clearToken } from '../utils/auth'
+import { setToken } from '../utils/auth'
 import cookie from 'react-cookies'
 
 class Login extends React.Component {
 
     onFinish = values => {
         const { dispatch } = this.props;
-        dispatch({
-            type: 'login/login',
-            payload: values
-        })
+        // dispatch({
+        //     type: 'login/login',
+        //     payload: values
+        // })
+        setToken({
+            authories: 'true'
+          });
+        window.location.href = '/';
     };
 
     onFinishFailed = errorInfo => {

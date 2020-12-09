@@ -82,18 +82,18 @@ function RouterConfig({ history }) {
           <Menu.Item key="看板" icon={<UserOutlined />} onClick={() => { history.push('/') }}>
             看板
           </Menu.Item>
-          <Menu.Item key="用户管理" icon={<UserOutlined />} onClick={() => { history.push('/users') }}>
-            用户管理
+          <Menu.Item key="读者管理" icon={<UserOutlined />} onClick={() => { history.push('/users') }}>
+            读者管理
           </Menu.Item>
-          <Menu.Item key="产品" icon={<VideoCameraOutlined />} onClick={() => { history.push('/products') }}>
+          {/* <Menu.Item key="产品" icon={<VideoCameraOutlined />} onClick={() => { history.push('/products') }}>
             产品
-            </Menu.Item>
+            </Menu.Item> */}
           <Menu.Item key="图书管理" icon={<UserOutlined />} onClick={() => { history.push('/books') }}>
             图书管理
           </Menu.Item>
-          <Menu.Item key="菜单三" icon={<UploadOutlined />}>
+          {/* <Menu.Item key="菜单三" icon={<UploadOutlined />}>
             菜单三
-            </Menu.Item>
+            </Menu.Item> */}
         </Menu>
       </Sider>
       <Layout className="site-layout" style={{ backgroundColor: '#ccc' }}>

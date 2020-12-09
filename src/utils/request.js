@@ -35,7 +35,8 @@ export default function request(url, method = 'get', data) {
   const options = {
     method: method,   // HTTP请求方法，默认为GET
     headers: {        // HTTP的请求头，默认为{}
-      'Content-Type': 'application/x-www-form-urlencoded',
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/json',
       // 'Cookie': 'JSESSIONID=3B95A1CCF1A3523EBC17A4A4267DBB51'
     },
     credentials: 'include' // 是否携带cookie，默认为omit,不携带; same-origi,同源携带; include,同源跨域都携带
@@ -44,6 +45,7 @@ export default function request(url, method = 'get', data) {
     url += '?' + parseQuery(data)
   } else {
     options.body = JSON.stringify(data)
+    // options.Body = data;
   }
   return fetch(url, options)
     .then(checkStatus)

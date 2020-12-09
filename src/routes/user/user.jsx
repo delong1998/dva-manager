@@ -11,38 +11,50 @@ class Products extends React.Component {
 
   state = {
     selectedRows: [],
-    //传过来的数据格式
-    data: {
-      list : [{title:'asdsad'}],
-      pagination: {
-        totle: 4,
-        currentPage: 1,
-        pageSize: 10
-      }
-    }
+  }
+
+  componentDidMount(){
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'users/fetch',
+      payload: {}
+    })
   }
 
   columns = [
     {
-      title: '标题',
-      dataIndex: 'title'
+      title: '姓名',
+      dataIndex: 'username'
     },
     {
-      title: '是否发布',
-      render: (text,record) => (
-        <div> {record? '是' : '否'}</div>
-      ),
+      title: '电话号码',
+      dataIndex: 'tel'
     },
     {
-      title: '次序',
-      dataIndex: 'seq',
+      title: '邮箱地址',
+      dataIndex: 'email'
     },
+    {
+      title: '已借图书数量',
+      dataIndex: 'borrowNum'
+    },
+    {
+      title: '借书证状态',
+      dataIndex: 'status'
+    },
+    // {
+    //   title: '是否发布',
+    //   render: (text,record) => (
+    //     <div> {record? '是' : '否'}</div>
+    //   ),
+    // },
+  
     {
       title: '操作',
       render: (text, record) => (
         <Fragment>
           <a onClick={() => this.confirmAndDeleteProducts(record)}>删除 </a>
-          <a onClick={() => this.updataProducts(record)}>| 编辑</a>
+          {/* <a onClick={() => this.updataProducts(record)}>| 编辑</a> */}
         </Fragment>
       ),
     },
@@ -61,7 +73,7 @@ class Products extends React.Component {
             </div>
             <StandardTable
               selectedRows={selectedRows}
-              data={this.state.data}
+              data={this.props.data}
               rowKey="id"
               columns={this.columns}
             // onSelectRow={this.handleSelectRows}
@@ -77,7 +89,7 @@ class Products extends React.Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    data: state.products.data
+    data: state.users.data
   }
 }
 export default connect(mapStateToProps)(Products);

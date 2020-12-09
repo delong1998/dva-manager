@@ -6,6 +6,7 @@
     "lint": "eslint --ext .js src",
     "precommit": "npm run lint"
   },
+  "homepage": ".",
   "dependencies": {
     "antd": "^4.8.5",
     "babel-plugin-import": "^1.13.3",
